@@ -19,5 +19,6 @@ beforeEach(() => {
       }
     })
   
-    expect(await getBinancePrice()).toBe(9);
+    expect(await getBinancePrice("BTC")).toBe(9);
   });
+
