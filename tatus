@@ -1,0 +1,29 @@
+[33mcommit 0250608bd4b26faa6bdfaeea9d034f3908432c7a[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Yong Chee Ho <yongcheeho@gmail.com>
+Date:   Mon May 15 10:29:09 2023 +0800
+
+    Added error handling into binance and luno URL fetching
+
+[33mcommit c1309fcaffc5b598ff60e8ab45929f046bc4effc[m
+Author: Yong Chee Ho <yongcheeho@gmail.com>
+Date:   Thu May 11 17:42:34 2023 +0800
+
+    Updated binance.test.js and shorten some function module
+
+[33mcommit a07d44e68893836d12adc38a28529a24fe05c128[m
+Author: Yong Chee Ho <yongcheeho@gmail.com>
+Date:   Thu May 11 16:15:11 2023 +0800
+
+    Added luno and binance test.js
+
+[33mcommit dbdd69d90ef2c0739bf283c52dfadd0feb22cbf1[m
+Author: Yong Chee Ho <yongcheeho@gmail.com>
+Date:   Thu May 11 14:37:06 2023 +0800
+
+    Added price calculation test.
+
+[33mcommit acef106891eff345a1e2877165cf369d2a0083df[m
+Author: Yong Chee Ho <yongcheeho@gmail.com>
+Date:   Thu May 11 11:17:20 2023 +0800
+
+    Completed luno module and unmodule project

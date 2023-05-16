@@ -7,19 +7,20 @@ import { priceDiff , lunoPremium } from './lib/priceCalc.js';
 // import { getForexPrice } from './lib/forex.js';
 dotenv.config();
 
+// currency input 
 let currency;
 const input = prompt({ sigint: true });
 currency = input("Enter currency: ").toUpperCase();
 
-
-let binanceCurrency; // converting XBT to BTC for binance
+// converting XBT to BTC for binance
+let binanceCurrency; 
 if (currency === 'XBT') {
         binanceCurrency = 'BTC';
 } else {
         binanceCurrency = currency;
 }
 
-
+// Initialize all the function and prints the prices
 async function priceList() {
     let lunoMYRPrice = await getLunoMYRPrice(currency)
     let lunoUSDPrice = await getLunoUSDPrice(currency) 
@@ -34,10 +35,11 @@ async function priceList() {
     console.log("Luno Premium: ".padStart(40), parseFloat(lunoPremiumPercentage).toFixed(4) + "%");
     // console.log("USDMYR: ".padStart(40), parseFloat(USDMYRPrice).toFixed(6));
     console.log("______________________________________________________".padStart(40));
-  }
-  
+}
+
 priceList();
 
+// Looping the price list
 function priceLoop(){
     let i = 1;
     setTimeout(function(){
