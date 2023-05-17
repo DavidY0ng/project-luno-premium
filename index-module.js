@@ -39,7 +39,7 @@ export async function priceList() {
 
 priceList();
 
-// Looping the price list
+//Looping the price list
 function priceLoop(){
     let i = 1;
     setTimeout(function(){
