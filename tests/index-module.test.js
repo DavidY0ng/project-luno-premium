@@ -39,11 +39,24 @@ test ( async () => {
     };
   });
 
-  expect (console.log).toHaveBeenCalledWith(`${currency}MYR Price on Luno: `.padStart(40), "MYR " + parseFloat(MOCK_LUNO_MYR_PRICE).toFixed(3));
-  expect (console.log).toHaveBeenCalledWith(`${currency}USD Price on Luno: `.padStart(40), "USD " + parseFloat(MOCK_LUNO_USD_PRICE).toFixed(3));
-  expect (console.log).toHaveBeenCalledWith(`${binanceCurrency}BUSD Price on Binance: `.padStart(40), "USD " + parseFloat(MOCK_BINANCE_PRICE).toFixed(3));
+  const MOCK_RATES = 4.55
+  jest.mock("../lib/forex.js", () => {
+    return {
+      getForexPrice() {
+        return new Promise((res) => {
+          res(MOCK_RATES);
+        });
+      },
+    };
+  });
 
-
+  expect (console.log).toHaveBeenCalledWith(
+  `${currency}MYR Price on Luno: `.padStart(40), "MYR " + parseFloat(MOCK_LUNO_MYR_PRICE).toFixed(3),
+  `${currency}USD Price on Luno: `.padStart(40), "USD " + parseFloat(MOCK_LUNO_USD_PRICE).toFixed(3),
+  `${currency}USD Price on Luno: `.padStart(40), "USD " + parseFloat(MOCK_LUNO_USD_PRICE).toFixed(3),
+  `${binanceCurrency}BUSD Price on Binance: `.padStart(40), "USD " + parseFloat(MOCK_BINANCE_PRICE).toFixed(3),
+  "USDMYR: ".padStart(40), parseFloat(MOCK_RATES).toFixed(6)
+  );
 })
 
 
