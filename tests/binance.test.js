@@ -1,14 +1,11 @@
 beforeEach(() => {
-    jest.resetModules(); // reset module mocks before each test to not affect other tests in this file
+    jest.resetModules();
   });
   
   test("Returns price if Binance request succeeds", async () => {
-    const getBinancePrice = require('../lib/binance.js').getBinancePrice // your function name could be different
-  
-    // mocking the entire node-binance-api module
+    const getBinancePrice = require('../lib/binance.js').getBinancePrice 
     jest.mock('node-binance-api', () => {
       return class Binance {
-        // we use only the prices method for this particular test, so we'll mock just this method
         prices() {
           return new Promise(res => {
             res({

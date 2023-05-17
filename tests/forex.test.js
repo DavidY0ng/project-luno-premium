@@ -6,7 +6,6 @@ const MOCK_JSON_RESP = {
     MYR: MOCK_RATE }
 }
 
-// we're modifying the fetch method to return these values
 global.fetch = jest.fn(() => Promise.resolve({
   status: 200,
   json: () => Promise.resolve(MOCK_JSON_RESP)

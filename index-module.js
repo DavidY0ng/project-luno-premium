@@ -4,7 +4,7 @@ import { getLunoMYRPrice } from './lib/luno.js';
 import { getLunoUSDPrice } from './lib/luno.js';
 import { getBinancePrice } from './lib/binance.js';
 import { priceDiff , lunoPremium } from './lib/priceCalc.js';
-// import { getForexPrice } from './lib/forex.js';
+import { getForexPrice } from './lib/forex.js';
 dotenv.config();
 
 // currency input 
@@ -27,13 +27,13 @@ export async function priceList() {
     let binanceUSDPrice = await getBinancePrice(currency)
     let priceDifference =  priceDiff(lunoUSDPrice, binanceUSDPrice)
     let lunoPremiumPercentage = lunoPremium(lunoUSDPrice, binanceUSDPrice)
-    // USDMYRPrice = await getForexPrice();
+    let USDMYRPrice = await getForexPrice();
     console.log(`${currency}MYR Price on Luno: `.padStart(40), "MYR " + parseFloat(lunoMYRPrice).toFixed(3));
     console.log(`${currency}USD Price on Luno: `.padStart(40), "USD " + parseFloat(lunoUSDPrice).toFixed(3));
     console.log(`${binanceCurrency}BUSD Price on Binance: `.padStart(40), "USD " + parseFloat(binanceUSDPrice).toFixed(3));
     console.log("Price difference of Luno and Binance: ".padStart(40), "USD " + parseFloat(priceDifference).toFixed(3));
     console.log("Luno Premium: ".padStart(40), parseFloat(lunoPremiumPercentage).toFixed(4) + "%");
-    // console.log("USDMYR: ".padStart(40), parseFloat(USDMYRPrice).toFixed(6));
+    console.log("USDMYR: ".padStart(40), parseFloat(USDMYRPrice).toFixed(6));
     console.log("______________________________________________________".padStart(40));
 }
 

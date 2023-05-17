@@ -1,6 +1,5 @@
-// test file
 beforeEach(() => {
-  jest.resetModules(); // reset module mocks before each test
+  jest.resetModules();
 });
 
 const MOCK_LUNO_MYR_PRICE = 91000;
