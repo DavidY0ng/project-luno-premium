@@ -1,5 +1,5 @@
-import { getLunoMYRPrice } from "../lib/luno";
-import { getLunoUSDPrice } from "../lib/luno";
+import { getLunoMYRPrice } from "../lib/luno.js";
+import { getLunoUSDPrice } from "../lib/luno.js";
 
 const MOCK_PRICE = 99
 const MOCK_JSON_RESP = { last_trade: MOCK_PRICE }

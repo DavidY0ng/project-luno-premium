@@ -21,7 +21,7 @@ if (currency === 'XBT') {
 }
 
 // Initialize all the function and prints the prices
-async function priceList() {
+export async function priceList() {
     let lunoMYRPrice = await getLunoMYRPrice(currency)
     let lunoUSDPrice = await getLunoUSDPrice(currency) 
     let binanceUSDPrice = await getBinancePrice(currency)
